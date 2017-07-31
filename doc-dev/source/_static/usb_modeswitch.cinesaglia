@@ -1,0 +1,53 @@
+# Configuration for the usb_modeswitch package, a mode switching tool for
+# USB devices providing multiple states or modes
+#
+# Evaluated by the wrapper script /usr/bin/usb_modeswitch_dispatcher
+#
+# To enable an option, set it to "1", "yes" or "true" (case doesn't matter)
+# Everything else counts as "disable"
+
+
+# Disable automatic mode switching globally (e.g. to access the original
+# install storage)
+
+DisableSwitching=0
+
+# Disable check for MBIM module presence and configuration globally (to aid
+# special embedded environments)
+
+DisableMBIMGlobal=0
+
+# Enable logging (results in a extensive report file in /var/log, named
+# "usb_modeswitch_<interface-name>" and probably others
+
+EnableLogging=0
+
+
+# Optional increase of "delay_use" for the usb-storage driver; there are hints
+# that a recent kernel default change to 1 sec. may lead to problems, particu-
+# larly with USB 3.0 ports. Set this to at least 3 (seconds) in that case.
+# Does nothing if the current system value is same or higher
+
+#SetStorageDelay=4
+
+########################################################
+# AnyDATA ADU-500A, ADU-510A, ADU-510L, ADU-520A
+#
+# This ID gets an "Option" treatment by newer kernels.
+# Use module option "option_zero_cd=2" with usb-storage.
+# A kernel patch to fix the problem is pending
+#
+# Contributor: Vladimir Poluektov, Gabriel Smolar
+
+DefaultVendor=05c6
+DefaultProduct=1000
+
+TargetVendor=16d5
+TargetProduct=6502
+
+MessageContent="5553424312345678000000000000061b000000020000000000000000000000"
+NeedResponse=1
+
+# Product: USB MMC Storage
+# Manufacturer: AnyDATA Corporation
+# SerialNumber: 000000000002

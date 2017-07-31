@@ -16,6 +16,9 @@ Connections
 usb_modeswitch
 ^^^^^^^^^^^^^^
 
+.. literalinclude:: _static/usb_modeswitch.cinesaglia
+    :linenos:
+
 wvdial
 ^^^^^^
 
