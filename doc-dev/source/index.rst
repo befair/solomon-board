@@ -10,6 +10,16 @@ Welcome to SOLOmon board's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   intro
+   install
+   the-solomon-board
+   the-solomon-iso
+   software
+
+.. todo:: # scale-to-many-boards
+
+
+
 
 
 Indices and tables
