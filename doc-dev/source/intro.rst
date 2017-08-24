@@ -41,3 +41,4 @@ Most important, it is also pointed out reference for developers on:
 * data format for filling your own data into the cloud system;
 * how to add support for a new energy inverter model;
 
+Credits for this documentation goes to the `123solar project <http://www.123solar.org>`__.
