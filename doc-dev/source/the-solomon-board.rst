@@ -7,9 +7,9 @@ Architecture
 Hardware
 --------
 
-===========     ===========        
-Component       Number
-===========     ===========
+=================     ===========        
+Component             Number
+=================     ===========
 Raspberry Pi            1
 RS485 Converter         1
 SD card 8GB             1
@@ -22,24 +22,24 @@ Wi-Fi Dongle            1
 Ethernet Cable          1
 HDMI Cable              1
 Monutor HDMI            1
-===========     ===========
+=================     ===========
 
 Computer
 ^^^^^^^^
 There are two models:
-#. Raspberry PI1;
-   Needs an external Wireless adaptor.
-#. Raspberry PI3;
-   Featuring an internal Wireless and bluetooth adaptor.
 
-Power Suply
-^^^^^^^^^^^
+#. Raspberry PI 1: external wireless dongle suggested;
+#. Raspberry PI 3: featuring internal wireless and bluetooth interfaces.
+
+Power Supply
+^^^^^^^^^^^^
 Raspberry PI 3
-"""""""""""""
+""""""""""""""
+
 The Raspberry PI 3 needs at least +5.1V to be powered. 
 The mA needed deppends on what it is connected.
-The model A uses 500mA if nothing is atached. 
-The model B uses 700-1000mA if nothing is atached.
+The model A uses 500mA if nothing is attached. 
+The model B uses 700-1000mA if nothing is attached.
 The keyboard takes from 100mA to 1000mA.
 If the device takes more than 1A than its preferable an external power adaptor or the Raspberry could be damaged.
 
@@ -64,12 +64,13 @@ The Wireless adaptor (dongle) must be USB.
 
 UMTS
 """"
-A cheap UMTS usb device it's enough.
-Pay attention, the cheap UMTS could get overheated if connected for a long period of time.
+A cheap UMTS usb device it's enough, but pay attention, because it could get overheated if connected for a long period of time.
 
 SIM CARD
 """"""""
+
 #. Italy:
+
    #. Tim -> Good signal in many places.
    #. Tre -> Not good signal in many places, but cheap data subscription. 
 
