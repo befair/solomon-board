@@ -3,7 +3,14 @@ Software included
 
 Inverters
 ---------
+ABB PowerOne
+^^^^^^^^^^^^
+SMA SunnyBoyd
+^^^^^^^^^^^^^
 
+
+Drivers 
+-------
 Aurora
 ^^^^^^
 The official site of `Aurora <http://www.curtronics.com/Solar/>`_. 
@@ -41,9 +48,12 @@ Yasdi was developed in 'C'.
 Yasdi is written by SMA Solar Technology under GNU public licences.
 
 
+Configuration programs
+----------------------
 usb_modeswitch
 ^^^^^^^^^^^^^^
 usb_modeswitch is a mode switching tool for controlling lots of USB wireless devices.
+To install it run ``apt-get install usb-modeswitch``
 Plugging a new device into the machine, it is possible that it isn't recongized by the operating system. It's necessary to use usb_modeswitch to configure the new device.
 Plugging a low cost USB modem it may be recognized as a simple USB storge device. To switch it into a modem follow this steps:
 1. Recognize the product and vendor ID with the command ``lsusb`` [ID prodcut:vendor].
@@ -56,14 +66,29 @@ For the chinese USB modem adaptor the configuration file is:
 .. literalinclude:: _static/usb_modeswitch.cinesaglia
     :linenos:
 
-wvdial
+WvDial
 ^^^^^^
+.. todo:: move a part of this section into install.rst
+WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts ppp in order to connect to the Internet.
+To make WvDial work we need to:
+#. Install it: ``apt-get install wvdial ppp``
+#. Create a configuration file into **/etc/wvdial.conf** with ``wvdialconf /etc/wvdial.conf``
+#. Edit `` editor /etc/wvdial.conf``:
+   .. literalinclude:: _static/wvdial.conf
+#. Modify it to work with your internet provider informations.
+#. Run it with ``wvdial Defaults``. Change **Default** with whatever is writed in **/etc/wvdial.conf**. 
+
+Now running ``ifconfig`` or ``ip a`` you can see what IP assigned.
 
 wpa_supplicant
 ^^^^^^^^^^^^^^
+wpa_supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wireless driver. 
+To use wpa_supplicant/
+
+
 
 hostapd
-^^^^^^^
+^^^^^^
 
 dnsmasq
 ^^^^^^^
