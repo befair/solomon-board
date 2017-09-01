@@ -82,16 +82,26 @@ Now running ``ifconfig`` or ``ip a`` you can see what IP assigned.
 
 wpa_supplicant
 ^^^^^^^^^^^^^^
-wpa_supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wireless driver. 
-To use wpa_supplicant/
+wpa_supplicant is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wireless driver.
 
 
+RPI as an Access Point
+----------------------
+The Raspberry Pi can be used as a wireless access point, running a standalone network.
+It is needed an Access Point to easly connect to the raspberry with an SSH connection. 
+If we want to connect the rpi to a new WIFI, it is needed to manually change the network configuration files. To make it easier we are using the RPI as an Access Point when we boot it. Is usefull to have an external wireless adaptor, so we set that up as acess point and we use the rpi native wireless adaptor to connect to the local network.
+Making the RPI as an Access Point we can connect to it with any Device, for example a mobile phone. Once connected we use a web page to insert WIFI name and password. The RPI will automaticly change the network configuration files and estabilish a connection to the new local network.
 
 hostapd
 ^^^^^^
+Hostapd is the main program that makes the rpi works as an Access Point.
+Affter installing and configuring the program, it is good to change the default settings of *wifi name*, *wifi password*.
+The configuration file of this program ``/etc/hostapd/hostapd.conf``.
 
 dnsmasq
 ^^^^^^^
+The DHCP service is provided by a program called dnsmask. The DHCP serivice is needed to assign IP adresses for the clients connected to the rpi AP. 
+It is possible to allow acess to a max number of clients by setting the range with this comand: ``dhcp-range=192.168.0.x,192.168.y.20,255.255.255.0,<24>h``. Set the number of max clients chosing a range from **x** to **y**. 
 
 Monitoring
 ----------
