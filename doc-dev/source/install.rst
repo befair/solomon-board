@@ -335,8 +335,7 @@ Static IP
 """""""""
 Edit the ``/etc/dhcpcd.conf`` and add at the end of file ``denyinterfaces <interface>`` where *interface* stands for **wlan1** if you are using an external device. 
 Edit ``/etc/network/interfaces`` to add assign a static IP address to **wlan1**.
-.. todo:: config file example for wlan1
-.. literalinclude:: _static/....
+.. literalinclude:: _static/network-wlan-static-interface_4hostapd.txt
   :linenos:
 
 Restart the dhcpcd daemon and set up the new wlan1 configuration.
@@ -353,8 +352,7 @@ Make a backup of the original file.
   $ editor  /etc/dnsmasq.conf
 
 Add this to ``/etc/dnsmasq.conf``.
-.. todo:: config file
-.. literalinclude:: _static/....
+.. literalinclude:: _static/dnsmasq.conf.txt
   :linenos:
 
 Change the range of the IPs if it is too long.
@@ -363,7 +361,7 @@ Hostapd
 """""""
 With a fresh install of hostapd the file is empty.
 Edit the ``/etc/hostapd/hostapd.conf`` file as follows.
-.. ltieralinclude::
+.. ltieralinclude:: hostapd.conf.txt
   :linenos:
 
 #. This configuraion file is set up to use the **channel 7**, but it can be changed in any channel number desiderable.
