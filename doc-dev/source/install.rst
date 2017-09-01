@@ -1,5 +1,6 @@
 How to install
 ==============
+.. todo:: add the source.list repo
 
 Overview
 ^^^^^^^^
@@ -284,6 +285,7 @@ Open a browser application and type ``http://IP/123solar/admin/``. Where **IP** 
 The next step requires to be root.
 Run ``$ su`` to be root or ``$ sudo -i`` if you want to provide the user password.
 
+
 For NginX
 """""""""
 Is required to setup the http authentication files. 
@@ -305,4 +307,78 @@ Restart apache2.
 .. sourcecode:: bash
   $ systemctl restart apache2
 
+Setting RPI as Access Point
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Before starting with the installation of the required packages to set the rpi as an access point make the following checks.
+#. Run ``$ su`` to be root or ``$ sudo -i`` if you want to provide the user password.
+#. Make your system be updated ``apt-get update`` and ``apt-get upgrade``.
+
+Installing Packages
+"""""""""""""""""""
+Install dnsmask and hostapd.
+.. sourcecode:: bash
+  $ apt-get install dnsmask
+  $ apt-get install hostapd
+
+Stop the services of the installed packages.
+.. sourcecode:: bash
+  $ systemctl stop dnsmasq
+  $ systemctl stop hostapd
+
+Configuration
+^^^^^^^^^^^^^
+We are configuring a standalone network to act as a server. 
+Assign a static IP address for the wireless port. 
+If you are using the rpi native wilress port use **wlan0**, otherwise use **wlan1** if you connected an external wirelss device. 
+It is very helepfull to use an external wirelss device, the native one is used to connect the rpi to a real router for Internet access. 
+Static IP
+"""""""""
+Edit the ``/etc/dhcpcd.conf`` and add at the end of file ``denyinterfaces <interface>`` where *interface* stands for **wlan1** if you are using an external device. 
+Edit ``/etc/network/interfaces`` to add assign a static IP address to **wlan1**.
+.. todo:: config file example for wlan1
+.. literalinclude:: _static/....
+  :linenos:
+
+Restart the dhcpcd daemon and set up the new wlan1 configuration.
+.. sourcecode:: bash
+  $ systemctl restart dhcpcd
+  $ ifdown wlan1
+  $ ifup wlan1
+
+Dnsmasq
+"""""""
+Make a backup of the original file.
+.. sourcecode:: bash
+  $ mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
+  $ editor  /etc/dnsmasq.conf
+
+Add this to ``/etc/dnsmasq.conf``.
+.. todo:: config file
+.. literalinclude:: _static/....
+  :linenos:
+
+Change the range of the IPs if it is too long.
+
+Hostapd
+"""""""
+With a fresh install of hostapd the file is empty.
+Edit the ``/etc/hostapd/hostapd.conf`` file as follows.
+.. ltieralinclude::
+  :linenos:
+
+#. This configuraion file is set up to use the **channel 7**, but it can be changed in any channel number desiderable.
+#. The network is called **MyNertwork**, change it to dispaly a different name for the wireless SSID.
+#. The password name is **MyPassword**, change it with a stronger WPA2 password.
+
+Edit the ``/etc/default/hostapd`` file to tell the system where to find this configuration file.
+Find the lane **#DAEMON_CONF** and replace it with ``DAEMON_CONF="/etc/hostapd/hostapd.conf"``.
+
+Power ON
+""""""""
+Start up the services we previously shutted down.
+.. bashcode:: bash
+  $ systemctl start hostapd
+  $ systemctl start dnsmasq
+
+The network it is now accssible with the passward specified in the hostapd configuration file.
 
