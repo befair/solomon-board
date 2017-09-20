@@ -1,0 +1,5 @@
+KERNEL=="*" SUBSYSTEMS=="usb", DRIVERS=="usb" ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="1000", ATTRS{serial}=="864319031582777", SYMLINK+="umts_storage", RUN+="/usr/bin/sudo sh /usr/local/bin/usb_modeswitch.sh"
+KERNEL=="ttyUSB0", SUBSYSTEMS=="usb", DRIVERS=="usb" ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="6000", ATTRS{serial}=="864319031582777", SYMLINK+="umts_modem", RUN+="/usr/bin/sudo sh usr/local/bin/start_network.sh"
+KERNEL=="ttyUSB0", SUBSYSTEMS=="usb", DRIVERS=="usb" ATTRS{idVendor}=="12d1", ATTRS{idProduct}=="1003", ATTRS{serial}=="0000:00:1d.1", SYMLINK+="umts_modem"
+#KERNEL=="", SUBSYSTEMS=="usb", DRIVERS=="usb" ATTRS{idVendor}=="", ATTRS{idProduct}=="", ATTRS{serial}=="", SYMLINK+="rs485"
+

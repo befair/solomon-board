@@ -1,0 +1,11 @@
+replacedefaultroute
+asyncmap 0
+auth
+crtscts
+lock
+hide-password
+modem
+#debug
+lcp-echo-interval 30
+lcp-echo-failure 4
+noipx

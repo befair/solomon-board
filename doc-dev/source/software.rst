@@ -66,6 +66,8 @@ For the chinese USB modem adaptor the configuration file is:
 .. literalinclude:: _static/usb_modeswitch.cinesaglia
     :linenos:
 
+.. todo::  dir solomon
+
 WvDial
 ^^^^^^
 .. todo:: move a part of this section into install.rst
