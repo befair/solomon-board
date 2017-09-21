@@ -1,27 +1,28 @@
-How to install
+
+Howw to install
 ==============
 .. todo:: add the source.list repo
 
 Overview
 ^^^^^^^^
-The installation process is expplained in the following paragraphs. 
+The installation process is explained in the following paragraphs. 
 The installation process may take over one hour.
-Is highly recomanded to chose NginX over Apache. 
+Is highly recommended to chose NginX over Apache. 
 Make sure to have a micro SD card. 
 This guide makes use of an Linux based distribution to install raspbian on the rpi. 
-Some basic knolwedge with bash coding is required. 
+Some basic knowledge with bash coding is required. 
 The connection with the rpi use the ssh protocol on a linux machine. 
-Some stepes requires to be root.
+Some steps requires to be root.
 Run ``$ su`` to be root or ``$ sudo -i`` if you want to provide the user password.
 
 Operating System
 ^^^^^^^^^^^^^^^^
 Here are the instruction to setup the system basing on *Raspbian Jessie Lite*. 
-Use the *Lite* version, beacuse there is not need to use more programs. 
+Use the *Lite* version, because there is not need to use more programs. 
 
 #. Download the `Raspbian "Jessie" Lite <https://www.raspberrypi.org/downloads/raspbian/>`_.
 #. Unzip it into your preferred folder: ``unzip path/of/file.zip -d destination/folder``
-#. Insert the SD card into an adaptor and connect it to the computer 
+#. Insert the SD card into an adapter and connect it to the computer 
 #. Use `dd <https://en.wikipedia.org/wiki/Dd_(Unix)>`_ to write the image on the SD. WARNING: check carefully the path of your inserted SD card.
    ``dd if=<path/to/file.iso> of=<path/to/sd p.e. /dev/sdb>``
 
@@ -40,7 +41,7 @@ Monitor + Keyboard
 
 Remote Connection
 """""""""""""""""
-1. Connect the ethernet cable to rpi and to computer/switch;
+1. Connect the Ethernet cable to rpi and to computer/switch;
 2. Switch ON the rpi (by connecting its power supply);
 3. Open the terminal on the computer and connect in SSH:
 
@@ -112,7 +113,7 @@ Reboot the system: `reboot`.
 
 Distro Update
 """""""""""""
-Perform the following comands to have an update system.
+Perform the following commands to have an update system.
 1. `apt-get update`;
 2. `apt-get dist-upgrade`;
 Reboot the system: `reboot`.
@@ -192,16 +193,16 @@ To install PHP use the following command:
 .. sourcecode:: bash
   apt-get install php5 libapache2-mod-php5 php5-curl
 
-Check if PHP5 is corectly installed:
+Check if PHP5 is correctly installed:
 #. Create a new file ``test.php``.
 .. sourcecode:: bash
   $ editor /var/www/test.php
 
-#. Point your browser to ``http://IP/test.php``. **IP** is the ip of the rpi. The page must show the default configuraion of PHP5.
+#. Point your browser to ``http://IP/test.php``. **IP** is the ip of the rpi. The page must show the default configuration of PHP5.
 
 If PHP5 works configure the file ``php.ini``.
 .. sourcecode:: bash
-  ediotr /etc/php5/apache2/php.ini
+  editor /etc/php5/apache2/php.ini
 
 Edit the following lines with the correct information about your geolocation.
 .. literalinclude:: _static/php.ini
@@ -232,7 +233,7 @@ Verify the installation of the required compiller
   $ gcc --version
   $ make -v
 
-If the compiller is missing, download and install it.
+If the compiler is missing, download and install it.
 .. sourcecode:: bash
   $ sudo apt-get update
   $ sudo apt-get upgrade
@@ -265,7 +266,7 @@ Uncompress the files.
   $ tar -xzvf 123solar*.tar.gz
   $ rm -v 123solar*.tar.gz
 
-Download and install the service to automaticly start 123solar.
+Download and install the service to automatically start 123solar.
 .. sourcecode:: bash
   $ cd /etc/systemd/system
   $ wget http://www.123solar.org/downloads/123solar/123solar.service
@@ -329,8 +330,8 @@ Configuration
 ^^^^^^^^^^^^^
 We are configuring a standalone network to act as a server. 
 Assign a static IP address for the wireless port. 
-If you are using the rpi native wilress port use **wlan0**, otherwise use **wlan1** if you connected an external wirelss device. 
-It is very helepfull to use an external wirelss device, the native one is used to connect the rpi to a real router for Internet access. 
+If you are using the rpi native wireless port use **wlan0**, otherwise use **wlan1** if you connected an external wireless device. 
+It is very helpful to use an external wireless device, the native one is used to connect the rpi to a real router for Internet access. 
 Static IP
 """""""""
 Edit the ``/etc/dhcpcd.conf`` and add at the end of file ``denyinterfaces <interface>`` where *interface* stands for **wlan1** if you are using an external device. 
@@ -364,7 +365,7 @@ Edit the ``/etc/hostapd/hostapd.conf`` file as follows.
 .. ltieralinclude:: hostapd.conf.txt
   :linenos:
 
-#. This configuraion file is set up to use the **channel 7**, but it can be changed in any channel number desiderable.
+#. This configuration file is set up to use the **channel 7**, but it can be changed to any channel number.
 #. The network is called **MyNertwork**, change it to dispaly a different name for the wireless SSID.
 #. The password name is **MyPassword**, change it with a stronger WPA2 password.
 
@@ -373,10 +374,9 @@ Find the lane **#DAEMON_CONF** and replace it with ``DAEMON_CONF="/etc/hostapd/h
 
 Power ON
 """"""""
-Start up the services we previously shutted down.
+Start up the services we previously shut down.
 .. bashcode:: bash
   $ systemctl start hostapd
   $ systemctl start dnsmasq
 
-The network it is now accssible with the passward specified in the hostapd configuration file.
-
+The network it is now accessible with the password specified in the hostapd configuration file.
