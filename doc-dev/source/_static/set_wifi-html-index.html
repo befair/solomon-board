@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Titolo</title>
+    <link rel="stylesheet" href="./material.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <form action="connect.php" method="POST">
+        <center>
+        <table>
+            <tr>
+                <td>
+                        <input class="mdl-textfield__input" type="radio" value="aurora" id="aurora" name="conf" checked> Aurora
+                </td>
+		
+		<td>
+                </td>
+
+                <td>
+                        <input class="mdl-textfield__input" type="radio" value="sma" id="sma" name="conf"> SMA
+                </td>
+            </tr>
+	</table></center>
+	<table id="connect-table">
+	    <tr>
+                <td>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="ssid" name="ssid"/>
+                        <label class="mdl-textfield__label" for="ssid">SSID</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="password" name="password"/>
+                        <label class="mdl-textfield__label" for="password">Password</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="connect-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" input type="submit">Connetti</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="./material.min.js"></script>
+</body>
