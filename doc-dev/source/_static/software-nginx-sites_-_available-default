@@ -27,7 +27,7 @@ server {
 	#
 	# include snippets/snakeoil.conf;
 
-	root /var/www/nginx;
+	root /var/www/html;
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html index.php;
@@ -44,7 +44,7 @@ server {
 	location ~ /123solar/admin {
 		index index.html index.htm index.php;
                 auth_basic "Restricted";
-                auth_basic_user_file /var/www/nginx/123solar/config/.htpasswd;
+                auth_basic_user_file /var/www/html/123solar/config/.htpasswd;
 	}
 
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
