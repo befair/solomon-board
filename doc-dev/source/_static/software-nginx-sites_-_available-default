@@ -41,7 +41,7 @@ server {
 		try_files $uri $uri/ /index.html;
 	}
 
-	location ~ /123solar/admin {
+	location /123solar/admin {
 		index index.html index.htm index.php;
                 auth_basic "Restricted";
                 auth_basic_user_file /var/www/html/123solar/config/.htpasswd;
@@ -59,9 +59,9 @@ server {
 	# deny access to .htaccess files, if Apache's document root
 	 #concurs with nginx's one
 	
-	location ~ /\.ht {
-		deny all;
-	}
+	#location ~ /\.ht {
+	#	deny all;
+	#}
 }
 
 

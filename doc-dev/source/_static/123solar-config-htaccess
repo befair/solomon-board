@@ -1,0 +1,5 @@
+AuthUserFile /var/www/html/123solar/config/.htpasswd
+AuthGroupFile /dev/null
+AuthName "123solar Password Protected Area"
+AuthType Basic
+require valid-user
