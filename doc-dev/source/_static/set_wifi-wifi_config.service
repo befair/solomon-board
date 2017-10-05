@@ -1,0 +1,10 @@
+[Unit]
+Description=Start wifi confg
+
+[Service]
+ExecStart=/usr/local/bin/wifi_config.sh
+Type=oneshot
+After=network.target
+
+[Install]
+WantedBy=default.target
