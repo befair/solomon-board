@@ -1,10 +1,11 @@
 [Unit]
 Description=123Solar
 Requires=network.target
-After=network.target nginx.service php-fpm.service
+After=network.target nginx.service php5-fpm.service
 
 [Service]
 Type=oneshot
+ExecStart=/bin/sleep 10
 ExecStart=/usr/bin/curl http://localhost/123solar/scripts/boot123s.php
 
 [Install]
