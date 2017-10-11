@@ -12,7 +12,7 @@ $PASSO1=9999999;
 $SR1='no';
 
 // #### PROTOCOL
-$PORT1='/dev/ttyUSB0';
+$PORT1='/dev/solar';
 $PROTOCOL1='aurora';
 $DAEMONMODE1=false;
 $ADR1=2;
