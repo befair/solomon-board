@@ -1,10 +1,10 @@
 [Unit]
 Description=Create new ssh keys
+After=network.target
 
 [Service]
 ExecStart=/usr/local/bin/start_openssh-server.sh
 Type=oneshot
-After=network.target
 
 [Install]
 WantedBy=default.target
