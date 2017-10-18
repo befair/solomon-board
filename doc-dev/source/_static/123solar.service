@@ -9,4 +9,4 @@ ExecStart=/bin/sleep 10
 ExecStart=/usr/bin/curl http://localhost/123solar/scripts/boot123s.php
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

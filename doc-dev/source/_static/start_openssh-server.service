@@ -7,4 +7,4 @@ ExecStart=/usr/local/bin/start_openssh-server.sh
 Type=oneshot
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target.wants
