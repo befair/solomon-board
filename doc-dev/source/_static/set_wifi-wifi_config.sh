@@ -2,7 +2,7 @@
 
 #Variables
 FILE_IN=/var/lib/wifi_config.txt
-FILE_OUT=/etc/wpa_supplicant/wpa_supplicant
+FILE_OUT=/etc/wpa_supplicant/wpa_supplicant.conf
 
 FILE_IN_INVT_CHECK=/var/lib/wifi_config_invt.txt
 FILE_IN_INVT_SMA=/var/www/html/123solar/config/config_sma/config_invt1.php
