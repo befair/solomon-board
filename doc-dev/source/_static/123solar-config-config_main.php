@@ -7,15 +7,15 @@ $DEBUG=true;
 
 // ### LOCALIZATION
 $DTZ='Europe/Rome';
-$LATITUDE=43.344;
-$LONGITUDE=12.906;
+$LATITUDE=43.000;
+$LONGITUDE=12.000`;
 $DATEFORMAT='d/m/Y';
 $DPOINT=',';
 $THSEP='.';
 
 // ### WEB PAGE
-$TITLE="123Solar logger";
-$SUBTITLE="The sun is yellow";
+$TITLE="Solomon Logger";
+$SUBTITLE="Real time logger";
  
 // ### CLEANUP
 $KEEPDDAYS=730;
