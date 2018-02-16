@@ -1,4 +1,4 @@
-The board
+﻿The board
 =========
 
 Architecture
@@ -21,7 +21,7 @@ Power Supply            1
 Wi-Fi Dongle            1 
 Ethernet Cable          1
 HDMI Cable              1
-Monutor HDMI            1
+Monitor HDMI            1
 =================     ===========
 
 Computer
@@ -37,11 +37,11 @@ Raspberry PI 3
 """"""""""""""
 
 The Raspberry PI 3 needs at least +5.1V to be powered. 
-The mA needed deppends on what it is connected.
+The mA needed depends on what it is connected.
 The model A uses 500mA if nothing is attached. 
 The model B uses 700-1000mA if nothing is attached.
 The keyboard takes from 100mA to 1000mA.
-If the device takes more than 1A than its preferable an external power adaptor or the Raspberry could be damaged.
+If the device takes more than 1A than its preferable an external power adapter or the Raspberry could be damaged.
 
 Connections
 -----------
@@ -60,7 +60,7 @@ Networking
 ^^^^^^^^^^
 Wireless 
 """"""""
-The Wireless adaptor (dongle) must be USB.
+The Wireless adapter (dongle) must be USB.
 
 UMTS
 """"
@@ -79,5 +79,5 @@ Video/Audio
 Monitor
 """""""
 To connect the device to the monitor, the Raspberry PI1 and PI3 has a HDMI port.
-For the Audio if the the Monitor dosen't have speakers, connect the Audio with an AUX cable to something else.
+For the Audio if the the Monitor doesn't have speakers, connect the Audio with an AUX cable to something else.
 

@@ -1,5 +1,5 @@
-
-Howw to install
+﻿
+How to install
 ==============
 .. todo:: add the source.list repo
 
@@ -9,7 +9,7 @@ The installation process is explained in the following paragraphs.
 The installation process may take over one hour.
 Is highly recommended to chose NginX over Apache. 
 Make sure to have a micro SD card. 
-This guide makes use of an Linux based distribution to install raspbian on the rpi. 
+This guide makes use of an Linux based distribution to install Raspbian on the rpi. 
 Some basic knowledge with bash coding is required. 
 The connection with the rpi use the ssh protocol on a linux machine. 
 Some steps requires to be root.
@@ -138,7 +138,7 @@ Edit ``nginx.conf``, ``fastcgi_params``, ``fastcgi.conf`` as follows:
 .. literalinclude:: _static/software-nginx-fastcgi.conf.txt
         :linenos:
 
-Enable nginx on boot and start the service:
+Enable NginX on boot and start the service:
 .. sourcecode:: bash
   $ systemctl enable nginx
   $ systemctl start nginx
@@ -173,7 +173,7 @@ Configuration for the apache web server directory:
 .. sourcecode:: bash
   $ cd /etc/apache2/sites-enabled
 
-Make a bakup for the file.
+Make a backup for the file.
 .. sourcecode:: bash  
   $ cp -v 000-default.conf 000-default.bak
   $ editor 000-default.conf
@@ -227,7 +227,7 @@ Uncompress the files.
   $ tar -xzvf aurora-1.9.3.tar.gz
   $ rm -v aurora-1.9.3.tar.gz
 
-Verify the installation of the required compiller
+Verify the installation of the required compiler
 .. sourcecode:: bash
   $ whereis gcc make
   $ gcc --version
